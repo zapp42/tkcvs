@@ -1,6 +1,6 @@
 Name:		tkcvs
 Version:	7.2.1
-Release:	0.fdr.1.1.92
+Release:	1
 Epoch:		0
 Summary:	TkCVS and TkDiff
 Group:		Development/Tools
