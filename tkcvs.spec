@@ -1,7 +1,6 @@
 Name:		tkcvs
 Version:	7.2.2
 Release:	2
-Epoch:		0
 Summary:	TkCVS and TkDiff
 
 Group:		Development/Tools
@@ -45,10 +44,10 @@ rm -rf ${RPM_BUILD_ROOT}
 
 %files
 %defattr(-,root,root)
+%doc CHANGELOG COPYING FAQ vendor5readme.pdf vendorcode.sh
 %{_datadir}/tkcvs
 %{_bindir}/*
 %{_mandir}/man1/*
-%doc CHANGELOG COPYING FAQ vendor5readme.pdf vendorcode.sh
 
 %changelog
 * Mon Feb 14 2005 Gerard Milmeister <gemi@bluewin.ch> - 0:7.2.2-2
