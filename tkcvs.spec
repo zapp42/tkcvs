@@ -10,7 +10,6 @@ URL:		http://www.twobarleycorns.net/tkcvs.html
 Source:		http://www.twobarleycorns.net/tkcvs_7_2_2.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:	tk, tcl, cvs
-BuildRequires:  sed
 BuildArch:	noarch
 
 %description
@@ -24,28 +23,29 @@ merging your changes.
 %setup -q -n tkcvs_7_2_2
 
 %build
+perl -pi -e 's|set TCDIR \[file join \$TclRoot tkcvs\]|set TCDIR "%{_datadir}/tkcvs"|' tkcvs/tkcvs.tcl
+perl -pi -e 's|\[file join \$TclRoot tkcvs bitmaps\]|\[file join \$TCDIR bitmaps\]|' tkcvs/tkcvs.tcl
 
 %install
-install -d ${RPM_BUILD_ROOT}%{_libdir}
+install -d ${RPM_BUILD_ROOT}%{_datadir}
 install -d ${RPM_BUILD_ROOT}%{_bindir}
 install -d ${RPM_BUILD_ROOT}%{_mandir}/man1
 cd tkcvs
-#sed "s|_TCDIR_|%{_datadir}|" tkcvs.blank > tkcvs
 install -m 0755 tkcvs.tcl ${RPM_BUILD_ROOT}%{_bindir}/tkcvs
 rm -f tkcvs.blank mklocal mkmanpage.pl
 install -m 0644 tkcvs.1 ${RPM_BUILD_ROOT}%{_mandir}/man1
 cd ../tkdiff
 install -m 0755 tkdiff ${RPM_BUILD_ROOT}%{_bindir}
 cd ..
-cp -fr tkcvs ${RPM_BUILD_ROOT}%{_libdir}
-cp -fr bitmaps ${RPM_BUILD_ROOT}%{_libdir}/tkcvs
+cp -fr tkcvs ${RPM_BUILD_ROOT}%{_datadir}
+cp -fr bitmaps ${RPM_BUILD_ROOT}%{_datadir}/tkcvs
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
 
 %files
 %defattr(-,root,root)
-%{_libdir}/tkcvs
+%{_datadir}/tkcvs
 %{_bindir}/*
 %{_mandir}/man1/*
 %doc CHANGELOG COPYING FAQ vendor5readme.pdf vendorcode.sh
@@ -53,6 +53,7 @@ rm -rf ${RPM_BUILD_ROOT}
 %changelog
 * Mon Feb 14 2005 Gerard Milmeister <gemi@bluewin.ch> - 0:7.2.2-2
 - Changed tk-devel and tcl-devel to tk and tcl
+- Moved %%{_libdir}/tkcvs to %%{_datadir}/tkcvs
 
 * Sat Feb 12 2005 Gerard Milmeister <gemi@bluewin.ch> - 0:7.2.2-1
 - New Version 7.2.2
