@@ -1,14 +1,15 @@
 Name:		tkcvs
-Version:	7.2.1
+Version:	7.2.2
 Release:	1
 Epoch:		0
 Summary:	TkCVS and TkDiff
+
 Group:		Development/Tools
-URL:		http://www.twobarleycorns.net/tkcvs.html
 License:	GPL
-Source:		http://www.twobarleycorns.net/tkcvs_7_2_1.tar.gz
+URL:		http://www.twobarleycorns.net/tkcvs.html
+Source:		http://www.twobarleycorns.net/tkcvs_7_2_2.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-Requires:	tk >= 0:8.3, tcl >= 0:8.3, cvs >= 0:1.11
+Requires:	tk-devel, tcl-devel, cvs
 BuildRequires:  sed
 BuildArch:	noarch
 
@@ -20,7 +21,7 @@ commands on the selected files. TkDiff is included for browsing and
 merging your changes.
 
 %prep
-%setup -q -n tkcvs_7_2_1
+%setup -q -n tkcvs_7_2_2
 
 %build
 
@@ -50,6 +51,9 @@ rm -rf ${RPM_BUILD_ROOT}
 %doc CHANGELOG COPYING FAQ vendor5readme.pdf vendorcode.sh
 
 %changelog
+* Sat Feb 12 2005 Gerard Milmeister <gemi@bluewin.ch> - 0:7.2.2-1
+- New Version 7.2.2
+
 * Sun May  2 2004 Gerard Milmeister <gemi@bluewin.ch> - 0:7.2.1-0.fdr.1
 - New Version 7.2.1
 
