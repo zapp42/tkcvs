@@ -1,6 +1,7 @@
 Name:		tkcvs
 Version:	7.2.2
-Release:	2
+Release:	3
+
 Summary:	TkCVS and TkDiff
 
 Group:		Development/Tools
@@ -50,6 +51,9 @@ rm -rf ${RPM_BUILD_ROOT}
 %{_mandir}/man1/*
 
 %changelog
+* Fri Apr  7 2005 Michael Schwendt <mschwendt[AT]users.sf.net>
+- rebuilt
+
 * Mon Feb 14 2005 Gerard Milmeister <gemi@bluewin.ch> - 0:7.2.2-2
 - Changed tk-devel and tcl-devel to tk and tcl
 - Moved %%{_libdir}/tkcvs to %%{_datadir}/tkcvs
