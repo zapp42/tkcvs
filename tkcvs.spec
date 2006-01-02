@@ -1,5 +1,5 @@
 Name:		tkcvs
-Version:	7.2.4
+Version:	8.0
 Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
@@ -7,20 +7,34 @@ Summary:	TkCVS and TkDiff
 Group:		Development/Tools
 License:	GPL
 URL:		http://www.twobarleycorns.net/tkcvs.html
-Source:		http://www.twobarleycorns.net/tkcvs_7_2_4.tar.gz
+Source:		http://www.twobarleycorns.net/tkcvs_8_0.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:	tk, tcl, cvs
 BuildArch:	noarch
 
 %description
-TkCVS is a Tcl/Tk-based graphical interface to the CVS configuration
-management system.  It displays the status of the files in the current
-working directory, and provides buttons and menus to execute CVS
-commands on the selected files. TkDiff is included for browsing and
-merging your changes.
+TkCVS is a Tcl/Tk-based graphical interface to the CVS and Subversion
+configuration management systems. It will also help with RCS. TkDiff
+is included for browsing and merging your changes.
+
+TkCVS shows the status of the files in the current working directory,
+and has tools for tagging, merging, importing, exporting, checking
+in/out, and other user operations.
+
+TkCVS also aids in browsing the repository. For Subversion, the
+repository tree is browsed like an ordinary file tree. For CVS, the
+CVSROOT/modules file is read. TkCVS extends CVS with a method to
+produce a "user friendly" listing of modules. This requires special
+comments in the CVSROOT/modules file.
+
+Although TkCVS now supports Subversion, it will still work happily
+without it in your CVS directories. It didn't abandon CVS, it just
+grew some new capabilities.
+
 
 %prep
-%setup -q -n tkcvs_7_2_4
+%setup -q -n tkcvs_8_0
+
 
 %build
 perl -pi -e 's|set TCDIR \[file join \$TclRoot tkcvs\]|set TCDIR "%{_datadir}/tkcvs"|' tkcvs/tkcvs.tcl
@@ -38,7 +52,6 @@ cd ../tkdiff
 install -m 0755 tkdiff ${RPM_BUILD_ROOT}%{_bindir}
 cd ..
 cp -fr tkcvs ${RPM_BUILD_ROOT}%{_datadir}
-cp -fr bitmaps ${RPM_BUILD_ROOT}%{_datadir}/tkcvs
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
@@ -51,11 +64,14 @@ rm -rf ${RPM_BUILD_ROOT}
 %{_mandir}/man1/*
 
 %changelog
+* Mon Jan  2 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0
+- new version 8.0
+
 * Sat Aug 13 2005 Gerard Milmeister <gemi@bluewin.ch> - 7.2.4
-- New Version 2.7.4
+- new version 7.2.4
 
 * Tue Jul  5 2005 Gerard Milmeister <gemi@bluewin.ch> - 7.2.3-1
-- New Version 2.7.3
+- new version 7.2.3
 
 * Fri Apr  7 2005 Michael Schwendt <mschwendt[AT]users.sf.net>
 - rebuilt
