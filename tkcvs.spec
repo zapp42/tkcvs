@@ -1,13 +1,13 @@
 Name:		tkcvs
-Version:	8.0
-Release:	2%{?dist}
+Version:	8.0.1
+Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
 
 Group:		Development/Tools
 License:	GPL
 URL:		http://www.twobarleycorns.net/tkcvs.html
-Source:		http://www.twobarleycorns.net/tkcvs_8_0.tar.gz
+Source:		http://www.twobarleycorns.net/tkcvs_8_0_1.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:	tk, tcl, cvs
 BuildArch:	noarch
@@ -33,12 +33,13 @@ grew some new capabilities.
 
 
 %prep
-%setup -q -n tkcvs_8_0
+%setup -q -n tkcvs_8_0_1
 
 
 %build
 perl -pi -e 's|set TCDIR \[file join \$TclRoot tkcvs\]|set TCDIR "%{_datadir}/tkcvs"|' tkcvs/tkcvs.tcl
 perl -pi -e 's|\[file join \$TclRoot tkcvs bitmaps\]|\[file join \$TCDIR bitmaps\]|' tkcvs/tkcvs.tcl
+
 
 %install
 install -d ${RPM_BUILD_ROOT}%{_datadir}
@@ -53,8 +54,10 @@ install -m 0755 tkdiff ${RPM_BUILD_ROOT}%{_bindir}
 cd ..
 cp -fr tkcvs ${RPM_BUILD_ROOT}%{_datadir}
 
+
 %clean
 rm -rf ${RPM_BUILD_ROOT}
+
 
 %files
 %defattr(-,root,root)
@@ -63,7 +66,11 @@ rm -rf ${RPM_BUILD_ROOT}
 %{_bindir}/*
 %{_mandir}/man1/*
 
+
 %changelog
+* Sun Jan 15 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.1-1
+- new version 8.0.1
+
 * Mon Jan  2 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0
 - new version 8.0
 
