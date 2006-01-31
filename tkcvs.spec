@@ -1,5 +1,5 @@
 Name:		tkcvs
-Version:	8.0.1
+Version:	8.0.2
 Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
@@ -7,7 +7,7 @@ Summary:	TkCVS and TkDiff
 Group:		Development/Tools
 License:	GPL
 URL:		http://www.twobarleycorns.net/tkcvs.html
-Source:		http://www.twobarleycorns.net/tkcvs_8_0_1.tar.gz
+Source:		http://puzzle.dl.sourceforge.net/sourceforge/tkcvs/tkcvs_8_0_2.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:	tk, tcl, cvs
 BuildArch:	noarch
@@ -68,6 +68,9 @@ rm -rf ${RPM_BUILD_ROOT}
 
 
 %changelog
+* Tue Jan 31 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.2-1
+- new version 8.0.2
+
 * Sun Jan 15 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.1-1
 - new version 8.0.1
 
