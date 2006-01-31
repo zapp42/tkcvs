@@ -33,7 +33,7 @@ grew some new capabilities.
 
 
 %prep
-%setup -q -n tkcvs_8_0_1
+%setup -q -n tkcvs_8_0_2
 
 
 %build
