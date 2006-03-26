@@ -1,15 +1,17 @@
 Name:		tkcvs
-Version:	8.0.2
-Release:	2%{?dist}
+Version:	8.0.3
+Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
 
 Group:		Development/Tools
 License:	GPL
 URL:		http://www.twobarleycorns.net/tkcvs.html
-Source:		http://puzzle.dl.sourceforge.net/sourceforge/tkcvs/tkcvs_8_0_2.tar.gz
+Source:		http://puzzle.dl.sourceforge.net/sourceforge/tkcvs/tkcvs_8_0_3.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-Requires:	tk, tcl, cvs
+Requires:	tk
+Requires:	tcl
+Requires:	cvs
 BuildArch:	noarch
 
 %description
@@ -33,7 +35,7 @@ grew some new capabilities.
 
 
 %prep
-%setup -q -n tkcvs_8_0_2
+%setup -q -n tkcvs_8_0_3
 
 
 %build
@@ -68,6 +70,9 @@ rm -rf ${RPM_BUILD_ROOT}
 
 
 %changelog
+* Sun Mar 26 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.3-1
+- new version 8.0.3
+
 * Fri Feb 17 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.2-2
 - Rebuild for Fedora Extras 5
 
