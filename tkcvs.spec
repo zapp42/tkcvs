@@ -1,6 +1,6 @@
 Name:		tkcvs
 Version:	8.0.3
-Release:	1%{?dist}
+Release:	2%{?dist}
 
 Summary:	TkCVS and TkDiff
 
@@ -70,6 +70,9 @@ rm -rf ${RPM_BUILD_ROOT}
 
 
 %changelog
+* Mon Aug 28 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.3-2
+- Rebuild for FE6
+
 * Sun Mar 26 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.3-1
 - new version 8.0.3
 
