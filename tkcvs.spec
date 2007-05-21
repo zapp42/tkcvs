@@ -1,13 +1,13 @@
 Name:		tkcvs
-Version:	8.0.3
-Release:	2%{?dist}
+Version:	8.0.4
+Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
 
 Group:		Development/Tools
 License:	GPL
 URL:		http://www.twobarleycorns.net/tkcvs.html
-Source:		http://puzzle.dl.sourceforge.net/sourceforge/tkcvs/tkcvs_8_0_3.tar.gz
+Source:		http://www.twobarleycorns.net/tkcvs_8_0_4.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:	tk
 Requires:	tcl
@@ -35,7 +35,7 @@ grew some new capabilities.
 
 
 %prep
-%setup -q -n tkcvs_8_0_3
+%setup -q -n tkcvs_8_0_4
 
 
 %build
@@ -63,13 +63,16 @@ rm -rf ${RPM_BUILD_ROOT}
 
 %files
 %defattr(-,root,root)
-%doc CHANGELOG COPYING FAQ vendor5readme.pdf vendorcode.sh
+%doc CHANGELOG COPYING FAQ vendor5readme.pdf
 %{_datadir}/tkcvs
 %{_bindir}/*
 %{_mandir}/man1/*
 
 
 %changelog
+* Mon May 21 2007 Gerard Milmeister <gemi@bluewin.ch> - 8.0.4-1
+- new version 8.0.4
+
 * Mon Aug 28 2006 Gerard Milmeister <gemi@bluewin.ch> - 8.0.3-2
 - Rebuild for FE6
 
