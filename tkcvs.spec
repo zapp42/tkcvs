@@ -1,6 +1,6 @@
 Name:		tkcvs
 Version:	8.0.4
-Release:	1%{?dist}
+Release:	2%{?dist}
 
 Summary:	TkCVS and TkDiff
 
