@@ -1,6 +1,6 @@
 Name:		tkcvs
-Version:	8.1
-Release:	2%{?dist}
+Version:	8.2
+Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
 
@@ -8,7 +8,7 @@ Group:		Development/Tools
 # No version specified.
 License:	GPL+
 URL:		http://www.twobarleycorns.net/tkcvs.html
-Source:		http://www.twobarleycorns.net/tkcvs_8_1.tar.gz
+Source:		http://www.twobarleycorns.net/tkcvs_8_2.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:	tk
 Requires:	tcl
@@ -36,7 +36,7 @@ grew some new capabilities.
 
 
 %prep
-%setup -q -n tkcvs_8_1
+%setup -q -n tkcvs_8_2
 
 
 %build
@@ -71,8 +71,8 @@ rm -rf ${RPM_BUILD_ROOT}
 
 
 %changelog
-* Mon Sep  8 2008 Tom "spot" Callaway <tcallawa@redhat.com> - 8.1-2
-- fix license tag
+* Sun Dec  7 2008 Gerard Milmeister <gemi@bluewin.ch> - 8.2-1
+- mew release 8.2
 
 * Sat Nov 24 2007 Gerard Milmeister <gemi@bluewin.ch> - 8.1-1
 - new release 8.1
