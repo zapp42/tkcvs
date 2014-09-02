@@ -1,6 +1,6 @@
 Name:		tkcvs
-Version:	8.2.2
-Release:	7%{?dist}
+Version:	8.2.3
+Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
 
@@ -8,7 +8,7 @@ Group:		Development/Tools
 # No version specified.
 License:	GPL+
 URL:		http://www.twobarleycorns.net/tkcvs.html
-Source:		http://www.twobarleycorns.net/tkcvs_8_2_2.tar.gz
+Source:		http://www.twobarleycorns.net/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:	tk
 Requires:	tcl
@@ -36,7 +36,7 @@ grew some new capabilities.
 
 
 %prep
-%setup -q -n tkcvs_8_2_2
+%setup -q
 
 
 %build
@@ -64,13 +64,16 @@ rm -rf ${RPM_BUILD_ROOT}
 
 %files
 %defattr(-,root,root)
-%doc CHANGELOG COPYING FAQ vendor5readme.pdf
+%doc CHANGELOG.txt LICENSE.txt FAQ.txt
 %{_datadir}/tkcvs
 %{_bindir}/*
 %{_mandir}/man1/*
 
 
 %changelog
+* Tue Sep  2 2014 Lubomir Rintel <lkundrak@v3.sk> - 8.2.3-1
+- new release 8.2.3
+
 * Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 8.2.2-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
