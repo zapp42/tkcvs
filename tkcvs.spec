@@ -1,19 +1,20 @@
 Name:		tkcvs
 Version:	8.2.3
-Release:	6%{?dist}
+Release:	7%{?dist}
 
 Summary:	TkCVS and TkDiff
 
 Group:		Development/Tools
 # No version specified.
 License:	GPL+
-URL:		http://www.twobarleycorns.net/tkcvs.html
+URL:		https://sourceforge.net/projects/tkcvs
 Source:		http://www.twobarleycorns.net/%{name}-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRequires:	perl-interpreter
 Requires:	tk
 Requires:	tcl
 Requires:	cvs
 BuildArch:	noarch
+Provides:	mergetool
 
 %description
 TkCVS is a Tcl/Tk-based graphical interface to the CVS and Subversion
@@ -36,7 +37,7 @@ grew some new capabilities.
 
 
 %prep
-%setup -q
+%autosetup
 
 
 %build
@@ -58,12 +59,7 @@ cd ..
 cp -fr tkcvs ${RPM_BUILD_ROOT}%{_datadir}
 
 
-%clean
-rm -rf ${RPM_BUILD_ROOT}
-
-
 %files
-%defattr(-,root,root)
 %doc CHANGELOG.txt LICENSE.txt FAQ.txt
 %{_datadir}/tkcvs
 %{_bindir}/*
@@ -71,6 +67,10 @@ rm -rf ${RPM_BUILD_ROOT}
 
 
 %changelog
+* Sat Feb 10 2018 Filipe Rosset <rosset.filipe@gmail.com> - 8.2.3-7
+- Rebuilt to fix FTBFS in rawhide + spec cleanup
+- Fixes rhbz #1424132 and rhbz #990450
+
 * Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 8.2.3-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
@@ -149,7 +149,7 @@ rm -rf ${RPM_BUILD_ROOT}
 * Tue Jul  5 2005 Gerard Milmeister <gemi@bluewin.ch> - 7.2.3-1
 - new version 7.2.3
 
-* Fri Apr  7 2005 Michael Schwendt <mschwendt[AT]users.sf.net>
+* Thu Apr  7 2005 Michael Schwendt <mschwendt[AT]users.sf.net>
 - rebuilt
 
 * Mon Feb 14 2005 Gerard Milmeister <gemi@bluewin.ch> - 0:7.2.2-2
