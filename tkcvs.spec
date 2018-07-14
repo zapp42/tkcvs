@@ -1,6 +1,6 @@
 Name:		tkcvs
 Version:	8.2.3
-Release:	7%{?dist}
+Release:	8%{?dist}
 
 Summary:	TkCVS and TkDiff
 
@@ -67,6 +67,9 @@ cp -fr tkcvs ${RPM_BUILD_ROOT}%{_datadir}
 
 
 %changelog
+* Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 8.2.3-8
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Sat Feb 10 2018 Filipe Rosset <rosset.filipe@gmail.com> - 8.2.3-7
 - Rebuilt to fix FTBFS in rawhide + spec cleanup
 - Fixes rhbz #1424132 and rhbz #990450
