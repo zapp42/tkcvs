@@ -4,7 +4,6 @@ Release:	8%{?dist}
 
 Summary:	TkCVS and TkDiff
 
-Group:		Development/Tools
 # No version specified.
 License:	GPL+
 URL:		https://sourceforge.net/projects/tkcvs
