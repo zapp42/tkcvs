@@ -1,6 +1,6 @@
 Name:		tkcvs
 Version:	8.2.3
-Release:	10%{?dist}
+Release:	11%{?dist}
 
 Summary:	TkCVS and TkDiff
 
@@ -66,6 +66,9 @@ cp -fr tkcvs ${RPM_BUILD_ROOT}%{_datadir}
 
 
 %changelog
+* Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 8.2.3-11
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Sat Jul 27 2019 Fedora Release Engineering <releng@fedoraproject.org> - 8.2.3-10
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
