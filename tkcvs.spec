@@ -1,13 +1,13 @@
 Name:		tkcvs
-Version:	8.2.3
-Release:	11%{?dist}
+Version:	9.3.2
+Release:	1%{?dist}
 
 Summary:	TkCVS and TkDiff
 
 # No version specified.
 License:	GPL+
 URL:		https://sourceforge.net/projects/tkcvs
-Source:		http://www.twobarleycorns.net/%{name}-%{version}.tar.gz
+Source:		http://www.twobarleycorns.net/%{name}_%{version}.tar.gz
 BuildRequires:	perl-interpreter
 Requires:	tk
 Requires:	tcl
@@ -36,7 +36,7 @@ grew some new capabilities.
 
 
 %prep
-%autosetup
+%autosetup -n %{name}_%{version}
 
 
 %build
